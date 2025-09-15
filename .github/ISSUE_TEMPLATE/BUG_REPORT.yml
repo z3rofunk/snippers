@@ -1,0 +1,75 @@
+name: '⛓️‍💥 Bug Report'
+description: Report a reproducible bug/Something broke!.
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks so much for taking the time to report this bug, it really helps me out!
+  - type: markdown
+    attributes:
+      value: 'Please read and follow the instructions before submitting an issue:'
+  - type: markdown
+    attributes:
+      value: |
+        - Ensure your issue isn't already [reported](https://github.com/z3rofunk/snippers/issues?utf8=%E2%9C%93&q=is%3Aissue).
+        - Ensure it isn't already fixed in the latest Snippers version.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? (Describe the bug)
+      description: A clear and concise description of what the bug is.
+      placeholder: A bug happened!
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 'To Reproduce'
+      description: |
+        Please either share a code snippet that reproduces the issue, type the detailed steps you followed when the error occurred, or do both.
+    validations:
+      required: false
+  - type: textarea
+    id: code-snippet
+    attributes:
+      label: 'Code snippet'
+      render: js
+    validations:
+      required: false
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 'Expected behavior'
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Notes or Insights
+      description: |
+        - Mention anything else important for understanding or replicating the problem.
+        - Feel free to include any relevant details or insights you believe would be helpful.
+        - If applicable, include any screenshots to help explain.
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ----
+
+        # Enviroment
+  - type: input
+    id: snippers-version
+    attributes:
+      label: 'Snippers Version'
+      placeholder: 'e.g. 0.2.0'
+  - type: input
+    id: node-version
+    attributes:
+      label: 'Node.js Version'
+      description: 'node --version'
+      placeholder: 'e.g. 13.0.1'
+    validations:
+      required: false
