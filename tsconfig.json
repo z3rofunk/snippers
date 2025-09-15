@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "Preserve",
+    "target": "es2022",
+    "types": ["node"],
+
+    "incremental": true,
+    "composite": false,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "esModuleInterop": true,
+    "noEmit": true,
+
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+
+    "skipLibCheck": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "removeComments": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}
