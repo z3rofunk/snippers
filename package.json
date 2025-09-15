@@ -1,0 +1,43 @@
+{
+  "name": "snippers",
+  "version": "0.1.0",
+  "description": "Watch this space..",
+  "author": "Zero Funk",
+  "license": "MIT",
+  "keywords": [],
+  "type": "module",
+  "scripts": {
+    "release:dry": "release-it --dry-run --no-npm",
+    "release": "release-it"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z3rofunk/snippers.git"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): v${version}",
+      "push": true,
+      "commit": true,
+      "tag": true
+    },
+    "github": {
+      "release": true,
+      "draft": true
+    },
+    "npm": {
+      "publish": true,
+      "ignoreVersion": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md",
+        "header": "# Changelog"
+      }
+    }
+  }
+}
