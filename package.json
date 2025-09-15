@@ -7,6 +7,9 @@
   "keywords": [],
   "type": "module",
   "scripts": {
+    "test": "vitest",
+    "format": "prettier --write . ",
+    "format:check": "prettier --check  .prettierrc . ",
     "release:dry": "release-it --dry-run --no-npm",
     "release": "release-it"
   },
@@ -71,7 +74,15 @@
     }
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@types/node": "^24.4.0",
+    "prettier": "^3.6.2",
+    "release-it": "^19.0.4",
     "typescript": "^5.9.2",
-    "unbuild": "^3.6.1"
+    "unbuild": "^3.6.1",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
