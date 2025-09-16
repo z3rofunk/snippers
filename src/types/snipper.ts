@@ -7,3 +7,10 @@ export interface SnipperConfig {
 
   proxy?: string;
 }
+
+export interface SnipResult {
+  /** The snipped (shortened) URL. */
+  snippedUrl: string;
+  /** The original URL that was snipped. */
+  originalUrl: string;
+}
