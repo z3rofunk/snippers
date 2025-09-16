@@ -33,7 +33,7 @@ class DagdSnipper extends BaseSnipper {
       this.validateUrl(url);
       const response = await this.get(`${this.baseUrl}/shorten`, {
         url,
-        ...(!!alias && { shorturl: alias }),
+        ...(alias && { shorturl: alias }),
       });
       const responseText = (await response.text()).trim();
 
@@ -66,7 +66,7 @@ class DagdSnipper extends BaseSnipper {
   override async unSnip(snippedUrl: string): Promise<SnipResult> {
     try {
       this.validateUrl(snippedUrl);
-      const DAGD_URL_PREFIX = 'da.gd/';
+      const DAGD_URL_PREFIX = `${this.baseUrl.replace('https://', '')}/`;
       const prefixIndex = snippedUrl.indexOf(DAGD_URL_PREFIX);
 
       if (prefixIndex === -1) {
@@ -87,9 +87,8 @@ class DagdSnipper extends BaseSnipper {
         );
       }
 
-      const originalUrl = responseText;
       return {
-        originalUrl,
+        originalUrl: responseText,
         snippedUrl,
       };
     } catch (err: unknown) {
