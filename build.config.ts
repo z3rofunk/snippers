@@ -1,4 +1,4 @@
-import { defineBuildConfig } from "unbuild";
+import { defineBuildConfig } from 'unbuild';
 
 export default defineBuildConfig({
   rollup: {
@@ -8,7 +8,8 @@ export default defineBuildConfig({
     },
   },
   declaration: true,
-  outDir: "dist",
+  outDir: 'dist',
   clean: true,
   failOnWarn: true,
+  entries: ['./src/index.ts', './src/types/index.ts'],
 });

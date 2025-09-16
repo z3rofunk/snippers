@@ -1,2 +1,2 @@
 export { Snippers } from './Snippers';
-export * from './types/snipper';
+export * from './types';
