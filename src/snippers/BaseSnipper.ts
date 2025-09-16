@@ -110,5 +110,14 @@ export abstract class BaseSnipper {
    * @returns {Promise<SnipResult>} A Promise resolving to the SnipResult.
    * @throws {SnipperError} If snipping fails.
    */
-  abstract snip(url: string): Promise<SnipResult>;
+  protected abstract snip(url: string): Promise<SnipResult>;
+
+  /**
+   * Optional method to un-snip (expand) a shortened URL.
+   *
+   * @param {string} snippedUrl - The snipped (shortened) URL to un-snip (expand).
+   * @returns  {Promise<SnipResult>} A Promise resolving to the SnipResult with original URL.
+   * @throws {SnipperError} If un-snipping fails.
+   */
+  protected unSnip?(snippedUrl: string): Promise<SnipResult>;
 }
