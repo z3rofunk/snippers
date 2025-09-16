@@ -12,7 +12,9 @@ function TimeoutController(timeout: number = 2000) {
 }
 
 function ProxyController(proxy: string = '') {
-  const agent = new HttpsProxyAgent(proxy);
+  const agent: HttpsProxyAgent<string> | undefined = proxy
+    ? new HttpsProxyAgent(proxy)
+    : undefined;
   return { agent };
 }
 export { TimeoutController, ProxyController };
