@@ -1,3 +1,5 @@
+import { SNIPPERS } from '../snippers/index';
+
 /**
  * Configuration options for snipper instances.
  */
@@ -14,3 +16,8 @@ export interface SnipResult {
   /** The original URL that was snipped. */
   originalUrl: string;
 }
+
+/**
+ * Type alias for available snipper identifiers.
+ */
+export type SnipperId = keyof typeof SNIPPERS;

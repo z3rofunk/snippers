@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 import { TimeoutController, ProxyController } from '../utils/request';
 
-import { SnipperError } from '../error/SnipperError';
+import { SnipperError, isSnipperError } from '../error/SnipperError';
 
 import { type SnipperConfig, type SnipResult } from '../types/snipper';
 
@@ -102,6 +102,17 @@ export abstract class BaseSnipper {
     }
     return url;
   };
+
+  protected handleError(
+    err: unknown,
+    snipperId: string,
+    method: string,
+  ): never {
+    if (isSnipperError(err)) throw err;
+    throw new SnipperError(
+      `Unexpected error occured during URL (${snipperId}) ${method}`,
+    );
+  }
 
   /**
    * Abstract method to snip (shorten) a URL.
